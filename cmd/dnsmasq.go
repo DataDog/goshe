@@ -9,6 +9,7 @@ import (
 
 const (
 	dnsmasqLog      = "/var/log/dnsmasq/dnsmasq"
+	dnsmasqProcess  = "/usr/sbin/dnsmasq"
 	signalInterval  = 20
 	yearSetInterval = 1
 )
@@ -41,6 +42,9 @@ var (
 	// DnsmasqLog is the logfile that dnsmasq logs to.
 	DnsmasqLog string
 
+	// DnsmasqProcess is the full process path to match
+	DnsmasqProcess string
+
 	// FullLogs determines whether we're looking at '--log-queries'
 	// levels of logs for dnsmasq.
 	// It's disabled by default as it's pretty inefficient.
@@ -61,6 +65,7 @@ var (
 
 func init() {
 	dnsmasqCmd.Flags().StringVarP(&DnsmasqLog, "log", "", dnsmasqLog, "dnsmasq log file.")
+	dnsmasqCmd.Flags().StringVarP(&DnsmasqProcess, "process", "", dnsmasqProcess, "dnsmasq process name.")
 	dnsmasqCmd.Flags().BoolVarP(&FullLogs, "full", "", false, "Use full --log-queries logs.")
 	dnsmasqCmd.Flags().BoolVarP(&MemoryFlag, "mem", "", false, "Send dnsmasq memory stats.")
 	RootCmd.AddCommand(dnsmasqCmd)
