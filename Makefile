@@ -11,7 +11,7 @@ deps: ## Install goshe dependencies.
 	go get -u github.com/progrium/basht
 	go get -u github.com/davecgh/go-spew/spew
 	go get -u github.com/hpcloud/tail/...
-	go get -u github.com/darron/goshe
+	go get -u github.com/DataDog/goshe
 
 format: ## Format the code with gofmt.
 	gofmt -w .

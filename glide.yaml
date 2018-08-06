@@ -1,4 +1,4 @@
-package: github.com/darron/goshe
+package: github.com/DataDog/goshe
 import:
 - package: github.com/DataDog/datadog-go
   subpackages:
